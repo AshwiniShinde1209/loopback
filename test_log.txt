@@ -1,0 +1,136 @@
+
+> loopback@2.38.1 test /loopback
+> grunt mocha-and-karma
+
+Running "jscs:gruntfile" (jscs) task
+>> 1 files without code style errors.
+
+Running "jscs:lib" (jscs) task
+>> 16 files without code style errors.
+
+Running "jscs:common" (jscs) task
+>> 11 files without code style errors.
+
+Running "jscs:server" (jscs) task
+>> 8 files without code style errors.
+
+Running "jscs:test" (jscs) task
+>> 63 files without code style errors.
+
+Running "jshint:gruntfile" (jshint) task
+>> 1 file lint free.
+
+Running "jshint:lib" (jshint) task
+>> 16 files lint free.
+
+Running "jshint:common" (jshint) task
+>> 11 files lint free.
+
+Running "jshint:server" (jshint) task
+>> 8 files lint free.
+
+Running "jshint:test" (jshint) task
+>> 63 files lint free.
+
+Running "mochaTest:unit" (mochaTest) task
+
+
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․,․․․․․․․․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․,․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․!․․․․․․․․․․․․․․․․․․․․․․․!․!․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ,․․,․․․․․․․․․․․․․․․․,,․․․․․․․․․․․․․․․․․,,․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ,,,․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․!․․․․․․․․․,,․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․!․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+  ․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
+
+  804 passing (31s)
+  13 pending
+  5 failing
+
+  1) loopback exports exports all expected properties:
+
+      AssertionError: expected [ Array(80) ] to deeply equal [ Array(78) ]
+      + expected - actual
+
+         "modelBuilder"
+         "name"
+         "prototype"
+         "query"
+      -  "raw"
+         "registry"
+         "remoteMethod"
+         "request"
+         "response"
+         "setDefaultDataSourceForType"
+         "static"
+         "status"
+         "template"
+      -  "text"
+         "timeout"
+         "token"
+         "urlNotFound"
+         "urlencoded"
+      
+      at Context.<anonymous> (test/loopback.test.js:120:25)
+      at process.topLevelDomainCallback (domain.js:126:23)
+
+  2) loopback loopback object inherits properties from express:
+     AssertionError: expected [Function: createApplication] to have a property 'json' of [Function: json], but got [Function]
+      at Context.<anonymous> (test/loopback.test.js:533:34)
+      at process.topLevelDomainCallback (domain.js:126:23)
+
+  3) loopback loopback.getCurrentContext preserves callback domain:
+
+      Uncaught AssertionError: expected 'context not available' to equal 'a value stored in context'
+      + expected - actual
+
+      -context not available
+      +a value stored in context
+      
+      at Test.<anonymous> (test/loopback.test.js:624:36)
+      at Test.assert (node_modules/supertest/lib/test.js:179:6)
+      at Server.assert (node_modules/supertest/lib/test.js:131:12)
+      at Server.EventEmitter.emit (domain.js:466:23)
+      at emitCloseNT (net.js:1619:8)
+      at node_modules/async-listener/glue.js:188:31
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+  4) loopback.rest context propagation should enable context with loopback.rest:
+     Error: expected 200 "OK", got 500 "Internal Server Error"
+      at Test._assertStatus (node_modules/supertest/lib/test.js:266:12)
+      at Test._assertFunction (node_modules/supertest/lib/test.js:281:11)
+      at Test.assert (node_modules/supertest/lib/test.js:171:18)
+      at Server.assert (node_modules/supertest/lib/test.js:131:12)
+      at Server.EventEmitter.emit (domain.js:466:23)
+      at emitCloseNT (net.js:1619:8)
+      at node_modules/async-listener/glue.js:188:31
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+  5) User Password length validation rejects passwords longer than 72 characters:
+     Error: Password too long: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa0123
+      at Function.User.validatePassword (common/models/user.js:652:13)
+      at Function.User.hashPassword (common/models/user.js:641:10)
+      at ModelConstructor.UserModel.setter.password (common/models/user.js:716:43)
+      at ModelConstructor.set [as password] (node_modules/loopback-datasource-juggler/lib/model-builder.js:464:43)
+      at ModelConstructor.ModelBaseClass._initProperties (node_modules/loopback-datasource-juggler/lib/model.js:192:17)
+      at ModelConstructor.ModelBaseClass (node_modules/loopback-datasource-juggler/lib/model.js:59:8)
+      at ModelConstructor (node_modules/loopback-datasource-juggler/lib/model-builder.js:185:22)
+      at ModelConstructor (node_modules/loopback-datasource-juggler/lib/model-builder.js:185:22)
+      at ModelConstructor (node_modules/loopback-datasource-juggler/lib/model-builder.js:185:22)
+      at new ModelConstructor (node_modules/loopback-datasource-juggler/lib/model-builder.js:185:22)
+      at Function.DataAccessObject.create (node_modules/loopback-datasource-juggler/lib/dao.js:291:13)
+      at Context.<anonymous> (test/user.test.js:405:14)
+
+
+
+Warning: Task "mochaTest:unit" failed. Use --force to continue.
+
+Aborted due to warnings.
