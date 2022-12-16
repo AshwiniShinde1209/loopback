@@ -1,19 +1,19 @@
-FROM ppc64le/node
-MAINTAINER "ashwini shinde" 
+FROM redhat/ubi8
 
-RUN apt-get -y update && \
-	apt-get install -y build-essential apt-utils
-	
-RUN npm cache clear --force
-#RUN npm install -g npm@9.1.3
-RUN git init && \
-#	git clone https://github.com/strongloop/loopback.git && \
-	git clone -b v2.38.1 -- https://github.com/strongloop/loopback.git && \
+MAINTAINER "Ashwini Shinde <Ashwini.Shinde4@ibm.com>" 
+
+
+RUN yum -y update 
+RUN dnf -y module install nodejs
+
+RUN yum -y install git
+RUN git clone -b v2.38.1 -- https://github.com/strongloop/loopback.git && \
 	cd loopback
 
 WORKDIR /loopback
 COPY ./ /loopback
-#RUN npm audit fix
-RUN npm install -g npm@9.2.0 grunt-cli --loglevel=error
-#RUN npm test
+
+RUN npm cache clear --force
+RUN npm install phantomjs-prebuilt@2.1.14 --ignore-scripts
+RUN npm install --loglevel=error
 
